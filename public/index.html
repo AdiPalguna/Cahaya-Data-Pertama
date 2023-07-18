@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahaya Data Pertama</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icon.png">
+    <style>
+        canvas {
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="py-3 sm:px-10 lg:px-20 xl:mx-auto">
+            <div class="flex items-center justify-between py-2">
+                <div class="flex items-center">
+                    <img src="assets/icon.png" alt="" class="w-8">
+                    <a href="#" class="font-bold ms-3 sm:text-xs lg:text-base">Cahaya Data Pertama</a>
+                </div>
+                <div>
+                    <div class="flex items-center">
+                        <p class="font-bold">Dashboard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr></hr>
+    </nav>
+
+    <!-- Main -->
+    <main class="py-3 sm:px-10 lg:px-20 xl:mx-auto">
+        <div class="flex justify-between mt-5">
+            <div class="w-1/2 rounded shadow-lg">
+                <div class="px-6 py-10">
+                    <h3 class="font-medium mb-2 sm:text-base xl:text-3xl">10000 Data</h3>
+                    <p class="mt-5 text-sm text-justify text-gray-700 sm:text-xs lg:text-sm xl:text-base">The JSON data contains 10000 sentiment and reviews from users for several products over the time.</p>
+                </div>
+            </div>
+            <div class="mx-10 w-1/2 rounded shadow-lg">
+                <div class="px-6 py-10">
+                    <h3 class="font-medium mb-2 sm:text-base xl:text-3xl">5 Sources</h3>
+                    <p class="mt-5 text-sm text-justify text-gray-700 sm:text-xs lg:text-sm xl:text-base">The JSON data contains 5 product sources, including Borderlands, Call of Duty: Black Ops Cold War, Amazon, Overwatch, and Xbox (XSeries).</p>
+                </div>
+            </div>
+            <div class="w-1/2 rounded shadow-lg">
+                <div class="px-6 py-10">
+                    <h3 class="font-medium mb-2 sm:text-base xl:text-3xl">4 Sentiments</h3>
+                    <p class="mt-5 text-sm text-justify text-gray-700 sm:text-xs lg:text-sm xl:text-base">The JSON data contains 4 categories of sentiment, including positive, negative, neutral, and irrelevant.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Visualization -->
+        <div>
+            <div class="p-10 mt-10 rounded-lg shadow-lg">
+                <h3 class="mb-5 font-medium text-center sm:text-base xl:text-3xl">Total Sentiments by Category</h3>
+                <canvas id="sentimentChart" class="w-auto"></canvas>
+            </div>
+
+            <div class="p-10 mt-10 rounded-lg shadow-lg">
+                <h3 class="mb-5 font-medium text-center sm:text-base xl:text-3xl">Total Sentiments per Category by Source</h3>
+                <div class="flex justify-between items-center mt-10">
+                    <div class="p-5 me-5 w-1/2">
+                        <canvas id="positiveCount"></canvas>
+                    </div>
+                    <div class="p-5 me-5 w-1/2">
+                        <canvas id="negativeCount"></canvas>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-10">
+                    <div class="p-5 me-5 w-1/2">
+                        <canvas id="neutralCount"></canvas>
+                    </div>
+                    <div class="p-5 me-5 w-1/2">
+                        <canvas id="irrelevantCount"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-10 mt-10 rounded-lg shadow-lg">
+                <h3 class="mb-5 font-medium text-center sm:text-base xl:text-3xl">Total Sentiments per Category by Datetime</h3>
+                <div class="flex justify-between items-center mt-10">
+                    <div class="p-5 me-5 w-1/2">
+                        <canvas id="positiveByDate"></canvas>
+                    </div>
+                    <div class="p-5 ms-5 w-1/2">
+                        <canvas id="negativeByDate"></canvas>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-10">
+                    <div class="p-5 me-5 w-1/2">
+                        <canvas id="neutralByDate"></canvas>
+                    </div>
+                    <div class="p-5 ms-5 w-1/2">
+                        <canvas id="irrelevantByDate"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/sentiment.js"></script>
+    <script src="js/positiveCount.js"></script>
+    <script src="js/negativeCount.js"></script>
+    <script src="js/neutralCount.js"></script>
+    <script src="js/irrelevantCount.js"></script>
+    <script src="js/positiveByDate.js"></script>
+    <script src="js/negativeByDate.js"></script>
+    <script src="js/neutralByDate.js"></script>
+    <script src="js/irrelevantByDate.js"></script>
+</body>
+</html>
