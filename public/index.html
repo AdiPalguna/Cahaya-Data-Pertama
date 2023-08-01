@@ -25,13 +25,84 @@
                 </div>
                 <div>
                     <div class="flex items-center">
-                        <p class="font-bold">Dashboard</p>
+                        <p class="font-bold sm:text-xs lg:text-base">Dashboard</p>
                     </div>
                 </div>
             </div>
         </div>
         <hr></hr>
     </nav>
+
+    <!-- Features -->
+    <div class="sm:pt-5 xl:pt-10">
+        <form action="" method="">
+            <div class="flex flex-row justify-center items-center">
+                <div>
+                    <div class="relative inline-block text-left sm:text-xs xl:text-base me-11">
+                        <button id="dropdown-btn" type="button" class="group bg-main text-white sm:px-3 xl:px-4 py-2 rounded-md shadow-sm hover:bg-blue-500">
+                            Any Date
+                            <svg class="inline-block w-4 h-4 ml-2 -mr-1 text-white group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="dropdown-menu" class="hidden absolute sm:p-1 p-2 right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg">
+                            <form action="" method="">
+                                <button type="button" class="w-full block px-4 py-1 hover:bg-main hover:text-white rounded-md">Today</button>
+                                <button type="button" class="w-full block px-4 py-1 hover:bg-main hover:text-white rounded-md">Yesterday</button>
+                                <button type="button" class="w-full block px-4 py-1 hover:bg-main hover:text-white rounded-md">This Month</button>
+                                <button type="button" class="w-full block px-4 py-1 hover:bg-main hover:text-white rounded-md">Past Month</button>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+                <div class="flex">
+                    <input type="text" class="border border-gray-300 sm:px-3 sm:py-1 xl:px-4 xl:py-2 rounded-l-md" placeholder="Type to search. . .">
+                    <button class="bg-main hover:bg-blue-500 text-white sm:px-3 sm:py-1 px-4 py-2 rounded-r-md">
+                        <img src="assets/search.jpg" alt="" class="text-white w-5">
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sm:text-xs xl:text-base mx-20 my-5">
+                <div class="flex flex-row justify-between mx-6 mb-5">
+                    <div>
+                        <input type="checkbox" name="positive">
+                        <label for="positive" id="positive">Positive</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="negative">
+                        <label for="negative" id="negative">Negative</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="neutral">
+                        <label for="neutral" id="neutral">Neutral</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="irrelevant">
+                        <label for="irrelevant" id="irrelevant">Irrelevant</label>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-between mx-6">
+                    <div>
+                        <input type="checkbox" name="borderlands">
+                        <label for="borderlands" id="borderlands">Borderlands</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="cod">
+                        <label for="cod" id="cod">Call of Duty: Black Ops Cold War</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="amazon">
+                        <label for="amazon" id="amazon">Amazon</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="xbox">
+                        <label for="xbox" id="xbox">Xbox (XSeries)</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <!-- Main -->
     <main class="py-3 sm:px-10 lg:px-20 xl:mx-auto">
@@ -105,6 +176,20 @@
         </div>
     </main>
 
+    <script>
+        const dropdownBtn = document.getElementById("dropdown-btn");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        dropdownBtn.addEventListener("click", function() {
+            dropdownMenu.classList.toggle("hidden");
+        });
+
+        window.addEventListener("click", function(event) {
+            if (!dropdownBtn.contains(event.target)) {
+                dropdownMenu.classList.add("hidden");
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/sentiment.js"></script>
     <script src="js/positiveCount.js"></script>
